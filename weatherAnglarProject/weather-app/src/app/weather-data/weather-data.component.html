@@ -1,0 +1,10 @@
+<div *ngIf="data" style="margin-top: 30px;">
+  <ul class="list-group">
+    <li class="list-group-item"> temperature is {{ data.temp }}F</li>
+    <li class="list-group-item">maximum temperature is {{ data.max_temp }}F</li>
+    <li class="list-group-item">minimum temperature is {{ data.min_temp }}F</li>
+    <li class="list-group-item">humidity is {{ data.humidity }}</li>
+    <li class="list-group-item">wind speed is {{ data.wind_speed }} mile per hour</li>
+    <li class="list-group-item">wind degree is {{ data.wind_degree }} degree </li>
+  </ul>
+</div>
