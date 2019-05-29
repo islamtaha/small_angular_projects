@@ -4,5 +4,6 @@ export class MovieList {
                 public poster_path: string, 
                 public vote_average: number,
                 public overview: string,
-                public release_date: string) {}
+                public release_date: string,
+                public index: number) {}
 }

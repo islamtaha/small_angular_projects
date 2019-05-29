@@ -1,29 +1,30 @@
-<div class="row">
-  <ng-container *ngFor="let i of [0, 1, 2, 3, 4]">
-    <div class="col-sm p-0"  *ngIf="getMovie(i)">
-      <img src="{{ getMovie(i).poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + getMovie(i).poster_path : '../../assets/images/no_image.jpg' }}"
-                 class="img-fluid" alt="{{ getMovie(i).title }}">  
-    </div>
-  </ng-container>
-</div>
-<div class="row">
-  <ng-container *ngFor="let i of [5, 6, 7, 8, 9]" >
-    <div class="col-sm p-0"  *ngIf="getMovie(i)">
-      <img  src="{{ getMovie(i).poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + getMovie(i).poster_path : '../../assets/images/no_image.jpg' }}" class="img-fluid" alt="{{ getMovie(i).title }}">  
-    </div>
-  </ng-container>
-</div>
-<div class="row">
-  <ng-container *ngFor="let i of [10, 11, 12, 13, 14]">
-    <div class="col-sm p-0"  *ngIf="getMovie(i)">
-      <img src="{{ getMovie(i).poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + getMovie(i).poster_path : '../../assets/images/no_image.jpg' }}" class="img-fluid" alt="{{ getMovie(i).title }}">  
-    </div>
-  </ng-container>
-</div>
-<div class="row">
-  <ng-container *ngFor="let i of [15, 16, 17, 18, 19]" >
-    <div class="col-sm p-0"  *ngIf="getMovie(i)">
-      <img src="{{ getMovie(i).poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + getMovie(i).poster_path : '../../assets/images/no_image.jpg' }}" class="img-fluid" alt="{{ getMovie(i).title }}">  
+<div class="row" *ngFor="let ind of [0, 1, 2, 3, 4]" >
+  <ng-container  *ngFor="let movie of getMovies(ind)" >
+    <div class="col-xl " *ngIf="movie"   (mouseenter)="onMouseEnter(movie.index)"  (mouseleave)="onMouseLeave(movie.index)" >
+      <a routerLink="movies/{{movie.id}}" >
+        <img src="{{ movie.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movie.poster_path : '../../assets/images/no_image.jpg' }}"
+                 class="img-fluid"  alt="{{ movie.title }}">
+        <div class="overlay" *ngIf="movieMouseOver(movie.index)" >
+          <div>
+            <h2 class="text1" >
+              {{ movie.title }}
+              <div>
+                  <h4 class="">
+                      {{ movie.release_date }}
+                  </h4>
+                  <div>
+                      <h3 class="">
+                        rating: {{ movie.vote_average }}
+                      </h3>
+                  </div>
+              </div>
+            </h2>
+          </div>
+          <p class="text4">
+            {{ shortenOverview(movie.overview) }}
+          </p>
+        </div>
+      </a>  
     </div>
   </ng-container>
 </div>

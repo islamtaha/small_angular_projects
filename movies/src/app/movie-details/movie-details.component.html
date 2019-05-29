@@ -1,3 +1,40 @@
-<p>
-  movie-details works!
-</p>
+<div class="row" *ngIf="movieDetail">
+    <div class="col-md-7" style="max-width: 300px; max-height: 300px;">
+        <img src="{{ movieDetail.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + movieDetail.poster_path : '../../assets/images/no_image.jpg' }}"
+            class="img-fluid"  alt="{{ movieDetail.title }}">
+    </div>
+    <div class="col-md-5">
+        <h2>
+            {{ movieDetail.title }}
+        </h2>
+        <p> <a href="{{ movieDetail.homepage }}">HomePage</a></p>
+        <hr>
+        <h3>
+            Vote: {{ movieDetail.vote_average }}
+        </h3>
+        <h3>
+            Vote Count: {{ movieDetail.vote_count }}
+        </h3>
+        <hr>
+        <section class="">
+            <h4><bdi>Information: </bdi></h4>
+            <p><strong><bdi>Status: </bdi></strong> {{ movieDetail.status }}</p>
+            <p><strong><bdi>Release Date: </bdi></strong> {{ movieDetail.release_date }}</p>
+            <p><strong><bdi>Original Title: </bdi></strong> {{ movieDetail.original_title }}</p>
+            <p><strong><bdi>Original Language: </bdi></strong> {{ movieDetail.original_language }}</p>
+            <p><strong><bdi>Runtime: </bdi></strong> {{ movieDetail.runtime }} min</p>
+            <p><strong><bdi>Budget: </bdi></strong> ${{ movieDetail.budget }}</p>
+            <p><strong><bdi>Revenue: </bdi></strong> ${{ movieDetail.revenue }}</p>
+        </section>
+        <hr>
+        <h4><bdi>Overview: </bdi></h4>
+        <p>
+            {{ movieDetail.overview }}
+        </p>
+        <hr>
+        <h4><bdi>Genres: </bdi></h4>
+        <ul *ngIf="movieDetail.genres">
+                <li *ngFor="let genre of movieDetail.genres">{{genre.name}}</li>
+        </ul>
+    </div>
+</div>

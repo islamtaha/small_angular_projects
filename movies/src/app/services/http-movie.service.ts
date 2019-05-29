@@ -12,14 +12,7 @@ export class HttpMovieService {
     constructor(private httpClient: HttpClient) {}
 
     getMovie(id: number){
-        let movie: MovieDetail; 
-        this.httpClient.get<MovieDetail>('https://api.themoviedb.org/3/movie/'+id+'?api_key=' + this.apiKey)
-                    .subscribe(
-                        (response: MovieDetail) => {
-                            console.log(response);
-                        }
-                    );
-        return movie;
+        return this.httpClient.get<MovieDetail>('https://api.themoviedb.org/3/movie/'+id+'?api_key=' + this.apiKey);
     }
 
     getMovieList(year: number, sortBy: string, genre: number){

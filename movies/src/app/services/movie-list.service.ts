@@ -16,13 +16,16 @@ export class MovieListService {
             (response: Response) => {
                 console.log(response);
                 let listHelper: MovieList[] = [];
+                let i: number = 0;
                 for(let res of response['results']){
                     listHelper.push(new MovieList(  res['id'],
                                                     res['title'], 
                                                     res['poster_path'], 
                                                     res['vote_average'],
                                                     res['overview'],
-                                                    res['release_date']));
+                                                    res['release_date'],
+                                                    i));
+                    i++;
                 }    
                 this.movieList = listHelper.slice();
                 this.movieListChanged.next(this.movieList.slice());
