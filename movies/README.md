@@ -1,6 +1,6 @@
 # Movies
 
-Angular application to get the movies by year and genre and sort them from themoviedb.org .
+Angular application to get the movies by year and genre and sort them from [themoviedb.org](https://www.themoviedb.org/).
 
 ## Intsallation:
 
@@ -19,7 +19,7 @@ $ ng serve
 
 ![Alt text](images/paging.png?raw=true "Title")
 
-2 - signup in themoviedb.org and go to your account and get the api Key and paste it in the header form and click save
+2 - signup in [themoviedb.org](https://www.themoviedb.org/) and go to your account and get the api Key and paste it in the header form and click save
 
 3 - choose the genre and the year of the movies you want to show and sort them and show movies details
 
