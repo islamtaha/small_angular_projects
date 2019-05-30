@@ -1,27 +1,22 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Angular application to get today's weather using latitude and longitude from [openweathermap.org](https://openweathermap.org/).
 
-## Development server
+## Intsallation:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1 - install required dependencies: 
 
-## Code scaffolding
+$ npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2 - run application:
 
-## Build
+$ ng serve 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## usage
+1 - go to http://localhost:4200 in the browser
 
-## Running unit tests
+![Alt text](images/weather.png?raw=true "Title")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2 - signup in [openweathermap.org](https://openweathermap.org/) and go to your account and get the api id
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3 - update the variable yourApiKey in /src/app/services/weather.service.ts
