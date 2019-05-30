@@ -28,3 +28,4 @@
     </div>
   </ng-container>
 </div>
+<ngb-pagination style="margin-top: 20px;" *ngIf="totalPages" (pageChange)="onPageChanged($event)" class="d-flex justify-content-center" [collectionSize]="totalPages"  [(page)]="page" aria-label="Default pagination"></ngb-pagination>

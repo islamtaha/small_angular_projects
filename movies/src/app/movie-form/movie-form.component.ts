@@ -61,21 +61,24 @@ export class MovieFormComponent implements OnInit {
     console.log(year);
     this.movieListService.addListMovies(this.movieForm.value.year, 
                                         this.movieForm.value.sortBy,
-                                        this.movieForm.value.genres);
+                                        this.movieForm.value.genres,
+                                        1);
   }
 
   changeSortBy(sortBy: string){
     console.log(sortBy);
     this.movieListService.addListMovies(this.movieForm.value.year, 
                                         this.movieForm.value.sortBy,
-                                        this.movieForm.value.genres);
+                                        this.movieForm.value.genres,
+                                        1);
   }
 
   changeRenres(renre: number){
     console.log(renre);
     this.movieListService.addListMovies(this.movieForm.value.year, 
                                         this.movieForm.value.sortBy,
-                                        this.movieForm.value.genres);
+                                        this.movieForm.value.genres,
+                                        1);
   }
 
 }

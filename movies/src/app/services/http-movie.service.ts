@@ -15,13 +15,6 @@ export class HttpMovieService {
         return this.httpClient.get<MovieDetail>('https://api.themoviedb.org/3/movie/'+id+'?api_key=' + this.apiKey);
     }
 
-    getMovieList(year: number, sortBy: string, genre: number){
-        if(genre === null){
-            return this.httpClient.get('https://api.themoviedb.org/3/discover/movie?primary_release_year=' + year + '&sort_by=' + sortBy + '&api_key=' + this.apiKey);
-        } 
-        return this.httpClient.get('https://api.themoviedb.org/3/discover/movie?primary_release_year=' + year + '&sort_by=' + sortBy + '&with_genres=' + genre + '&api_key=' + this.apiKey);
-    }
-
     setApiKey(apiKey: string){
         this.apiKey = apiKey;
     }
@@ -30,4 +23,10 @@ export class HttpMovieService {
         return this.apiKey;
     }
 
+    getMovieListWithPage(year: number, sortBy: string, genre: number, page: number){
+        if(genre === null){
+            return this.httpClient.get('https://api.themoviedb.org/3/discover/movie?primary_release_year=' + year + "&page=" + page + '&sort_by=' + sortBy + '&api_key=' + this.apiKey);
+        } 
+        return this.httpClient.get('https://api.themoviedb.org/3/discover/movie?primary_release_year=' + year + "&page=" + page + '&sort_by=' + sortBy + '&with_genres=' + genre + '&api_key=' + this.apiKey);
+    }
 }

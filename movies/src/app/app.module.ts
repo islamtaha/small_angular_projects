@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,8 @@ import { MovieStartComponent } from './movie-start/movie-start.component';
     MovieStartComponent
   ],
   imports: [
+    NgbPaginationModule,
+    NgbAlertModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
