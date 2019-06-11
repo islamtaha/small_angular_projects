@@ -1,0 +1,30 @@
+<div class="card my-card">
+  <article class="card-body">
+    <h4 class="card-title mb-4 mt-1">Add Item</h4>
+    <form (ngSubmit)="onAddItem()" [formGroup]="addItemForm">
+      <div class="form-group">
+        <label>Item Name</label>
+          <input name="name" id="name" formControlName="name" class="form-control" placeholder="Item Name" type="text" >
+          <div *ngIf="errorFlag && addItemForm.controls['name'].hasError('required')" class="alert alert-danger">
+            Name is required
+          </div>
+      </div> <!-- form-group// -->
+      <div class="form-group">
+        <!--<a class="float-right" href="#">Forgot?</a>-->
+        <label>Item Price In USD</label>
+          <input name="price" id="price" formControlName="price" class="form-control" placeholder="Item Price" type="number">
+          <div *ngIf="errorFlag && addItemForm.controls['price'].hasError('required')" class="alert alert-danger">
+            Price is required
+          </div>
+        </div> <!-- form-group// --> 
+      <div class="form-group"> 
+      <!-- <div class="checkbox">
+        <label> <input type="checkbox"> Save password </label>
+      </div> -->
+      </div> <!-- form-group// -->  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" > Add Item </button>
+      </div> <!-- form-group// -->                                                           
+    </form>
+  </article>
+</div>

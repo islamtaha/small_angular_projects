@@ -1,0 +1,34 @@
+<div class="card my-card">
+  <article class="card-body">
+    <div class="float-right row">
+      <p style="margin-right: 10px;">Dont have an Account?</p>
+      <a routerLink="/signup" class="float-right btn btn-outline-primary">Sign up</a>
+    </div>
+    <h4 class="card-title mb-4 mt-1">Sign in</h4>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <div class="form-group">
+        <label>Your email</label>
+          <input name="email" formControlName="email" class="form-control" placeholder="Email" type="email" >
+          <div *ngIf="errorFlag && loginForm.controls['email'].hasError('required')" class="alert alert-danger">
+            Email is required
+          </div>
+        </div> <!-- form-group// -->
+      <div class="form-group">
+        <!--<a class="float-right" href="#">Forgot?</a>-->
+        <label>Your password</label>
+          <input name="password" formControlName="password" class="form-control" placeholder="******" type="password" >
+          <div *ngIf="errorFlag && loginForm.controls['password'].hasError('required')" class="alert alert-danger">
+            Password is required
+          </div>
+      </div> <!-- form-group// --> 
+      <div class="form-group"> 
+      <!-- <div class="checkbox">
+        <label> <input type="checkbox"> Save password </label>
+      </div> -->
+      </div> <!-- form-group// -->  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+      </div> <!-- form-group// -->                                                           
+    </form>
+  </article>
+</div>
