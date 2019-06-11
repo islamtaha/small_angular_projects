@@ -9,4 +9,4 @@ a group of small angular projects made for learning purposes and practice using 
 * [weather-app](weather-app)
   * application to get today's weather using latitude and longitude.
 * [firebase-app](firebase-app)
-  * application to that use firebase database for CRUD and User Authentication.
+  * application that use firebase database for CRUD and User Authentication.

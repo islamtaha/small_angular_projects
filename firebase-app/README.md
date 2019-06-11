@@ -1,27 +1,32 @@
-# Firebase
+# FireBaseApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+Angular application that use firebase database for CRUD and User Authentication. [themoviedb.org](https://www.themoviedb.org/).
 
-## Development server
+## Intsallation:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1 - install required dependencies: 
 
-## Code scaffolding
+$ npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2 - run application:
 
-## Build
+$ ng serve 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## usage
+1 - go to http://localhost:4200 in the browser
 
-## Running unit tests
+![Alt text](images/signin.png?raw=true "Title")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Alt text](images/signup.png?raw=true "Title")
 
-## Running end-to-end tests
+2 - signup in [firebase](https://firebase.google.com/) and go to console and create new project then go to project settings and in your apps section choose web and register your app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3 - copy the application configuration and paste it into /firebase-app/src/environments/environment.ts in firebase 
 
-## Further help
+4 - you should be able to signup using email/password and signup and add, view and delete items.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Alt text](images/home.png?raw=true "Title")
+
+![Alt text](images/add-item.png?raw=true "Title")
+
+![Alt text](images/validation.png?raw=true "Title")
