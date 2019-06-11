@@ -1,6 +1,6 @@
 # FireBaseApp
 
-Angular application that use firebase database for CRUD and User Authentication. [themoviedb.org](https://www.themoviedb.org/).
+Angular application that use firebase database for CRUD and User Authentication.
 
 ## Intsallation:
 
